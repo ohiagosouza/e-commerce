@@ -1,21 +1,22 @@
-const buyButton = document.querySelectorAll('.buyButton');
-const addedToCart = document.querySelector('.toast');
+const buyButton = document.querySelectorAll(".buyButton");
+const addedToCart = document.querySelector(".toast");
+const notification = document.getElementById("notification");
+let cartItens = "";
 
 buyButton.forEach(buyButton => {
-  buyButton.addEventListener('click', () => {
-    const notification = document.getElementById('notification');
+  buyButton.addEventListener("click", () => {
+    const quantity = document.getElementById("quantity").value;
 
-    const quantity = document.querySelectorAll('').value;
-    console.log({ quantity });
-
-    notification + quantity;
     const toast = bootstrap.Toast.getOrCreateInstance(addedToCart);
     toast.show();
 
-    notification.innerText = quantity;
+    cartItens += quantity;
+
+    notification.innerText = cartItens;
   });
 });
 
-console.log({ buyButton });
-console.log({ addedToCart });
-console.log({ notification });
+// console.log({ buyButton });
+// console.log({ addedToCart });
+// console.log({ quantity });
+// console.log({ notification });
