@@ -11855,6 +11855,11 @@ li,
 li > a {
   text-decoration: none;
   list-style: none;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
 }
 
 .firstNavBar {
@@ -11889,8 +11894,9 @@ li > a {
 }
 
 .card {
-  margin-top: 3em;
+  margin-top: 1em;
   margin-bottom: 5em;
+  cursor: pointer;
 }
 .card .card-img-top {
   aspect-ratio: 3/2;
@@ -11907,14 +11913,43 @@ li > a {
   font-size: 20px;
   font-weight: bold;
 }
-.card #buyButton {
-  width: 80%;
+.card .buyButton {
+  display: flex;
+  justify-content: center;
+  width: 60%;
   height: 65%;
   background-color: #ff952c;
   border: none;
+  margin-top: 1em;
 }
 .card #buyButton:hover {
   background-color: #d8730d;
+}
+.card .quantity {
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1em;
+}
+
+.card:hover {
+  scale: 1.1;
+  transition: 0.3s;
+}
+
+.footer {
+  height: 2%;
+  background-color: #f2f2f2;
+  color: #404040;
+  padding: 3em;
+}
+
+.copyright {
+  justify-content: center;
+  align-items: center;
+}
+.copyright a {
+  color: #404040;
 }
 
 /*# sourceMappingURL=style.css.map */
