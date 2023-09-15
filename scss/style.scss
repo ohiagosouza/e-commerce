@@ -1,3 +1,6 @@
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import './variables.scss';
+
 ul,
 li,
 li > a {
@@ -24,10 +27,52 @@ li > a {
   }
 }
 
+.navbar {
+  background-color: $navbar-bg-color;
+}
+
 .cart-button {
   border: none;
   background-color: transparent;
 }
 
 .bestOffers {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.card {
+  margin-top: 3em;
+  margin-bottom: 5em;
+
+  .card-img-top {
+    aspect-ratio: 3/2;
+    object-fit: contain;
+  }
+
+  .card-title {
+    height: 5em;
+  }
+
+  .card-text {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .card-price {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  #buyButton {
+    width: 80%;
+    height: 65%;
+    background-color: $btn-primary-color;
+    border: none;
+  }
+
+  #buyButton:hover {
+    background-color: $btn-secondary-color;
+  }
 }
