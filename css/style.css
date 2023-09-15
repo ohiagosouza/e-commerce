@@ -1,0 +1,29 @@
+ul,
+li,
+li > a {
+  text-decoration: none;
+  list-style: none;
+}
+
+.firstNavBar {
+  display: flex;
+  justify-content: space-around;
+}
+.firstNavBar .form-control {
+  width: 300px;
+  height: 30px;
+}
+.firstNavBar .form-control .form-control:focus {
+  border: 1px solid #464646;
+  box-shadow: none;
+}
+.firstNavBar .searchIcon {
+  cursor: pointer;
+}
+
+.cart-button {
+  border: none;
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=style.css.map */
