@@ -3,26 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./js/main.js" defer></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon" />
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" /> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
     <title>Hiago e-Commerce</title>
   </head>
   <body>
-    <div class="firstNavBar">
-      <div class="d-flex">
-        <li class="m-2"><a href="#">About us</a></li>
-        <li class="m-2"><a href="#">Contact</a></li>
-      </div>
-      <span class="d-flex m-2 align-items-center">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchBar" />
-        <label for="searchBar">
-          <img src="./assets/magnifying-glass.png" alt="Search icon" width="20" class="ms-2 searchIcon" />
-        </label>
-      </span>
-    </div>
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <img src="./assets/logo.svg" alt="logo" width="150" />
@@ -87,29 +75,36 @@
                 <li><a class="dropdown-item" href="#">Fechaduras</a></li>
               </ul>
             </li>
+
+            <div class="d-flex align-items-center searchBar">
+              <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchBar" />
+              <label for="searchBar">
+                <img src="./assets/magnifying-glass.png" alt="Search icon" width="20" class="ms-2 searchIcon" />
+              </label>
+            </div>
+
+            <div class="px-4">
+              <li class="login-options"><a class="login-link" href="#">Entre ou Cadastre-se</a></li>
+            </div>
+            <div class="cart">
+              <button type="button" class="cart-button p-1">
+                <img src="./assets/shoppingCart.png" alt="Cart" width="35" /><span
+                  class="position-absolute top-10 start-10 translate-middle badge rounded-pill bg-danger"
+                  id="notification"
+                ></span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="p-2">
-          <li class="login-options"><a class="login-link" href="#">Login</a> ou</li>
-          <li class="login-options"><a class="signup-link" href="#">Cadastre-se</a></li>
-        </div>
-        <div class="ps-4 cart">
-          <button type="button" class="cart-button p-1">
-            <img src="./assets/shoppingCart.png" alt="Cart" width="35" /><span
-              class="top-0 start-100 translate-middle badge rounded-pill bg-danger"
-              id="notification"
-            ></span>
-          </button>
         </div>
       </div>
     </nav>
-    <div class="container">
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="container carouselBanner">
+      <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="6000">
+          <div class="carousel-item active" data-bs-interval="2500">
             <img src="./assets/macbookOffer.jpg" class="d-block" width="100%" alt="..." />
           </div>
-          <div class="carousel-item" data-bs-interval="6000">
+          <div class="carousel-item" data-bs-interval="3500">
             <img src="./assets/bannerAlexa.jpeg" class="d-block" width="100%" alt="..." />
           </div>
         </div>
@@ -117,29 +112,23 @@
           class="carousel-control-prev"
           id="arrow"
           type="button"
-          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-target="#carouselAutoplaying"
           data-bs-slide="prev"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="next"
-        >
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
     </div>
 
-    <div class="container mt-5">
-      <p class="h3">Compre agora mesmo</p>
-    </div>
-
     <div class="container bestOffers">
+      <div class="container-fluid">
+        <p class="h3 pt-5">Compre agora mesmo</p>
+      </div>
       <div aria-live="polite" aria-atomic="true" class="position-fixed border-0 bottom-0 end-0 p-1">
         <div
           class="toast align-items-center text-bg-primary position-relative border-0 bottom-0 end-0 p-1"
@@ -159,82 +148,84 @@
         </div>
       </div>
 
-      <div class="card" id="card" style="width: 20rem">
-        <img src="/assets/macbookAirM2.jpeg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Apple Macbook Air M1 15" 512Gb 8Gb</h5>
-          <p class="card-text"><strike>R$ 23,499,00</strike></p>
-          <p class="card-price">R$ 19.899,00</p>
+      <div class="offerCards">
+        <div class="card" style="width: 20rem">
+          <img src="/assets/macbookAirM2.jpeg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Apple Macbook Air M2 15" 512Gb 8Gb</h5>
+            <p class="card-text"><strike>R$ 23,499,00</strike></p>
+            <p class="card-price">R$ 19.899,00</p>
 
-          <span class="qntLabel">Quantidade: </span>
-          <input type="number" class="form-control form-control-sm" id="quantity" min="1" max="10" value="1" />
+            <!-- <span class="qntLabel">Quantidade: </span> -->
+            <!-- <input type="number" class="form-control form-control-sm quantity" min="1" max="10" value="1" /> -->
 
-          <a type="button" class="btn btn-primary buyButton">Comprar</a>
+            <button type="button" class="btn btn-primary buyButton">Comprar</button>
+          </div>
         </div>
-      </div>
 
-      <div class="card" id="card" style="width: 20rem">
-        <img src="./assets/echoDot5.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Echo Dot 5ª geração</h5>
-          <p class="card-text"><strike>R$ 949,00</strike></p>
-          <p class="card-price">R$ 769,00</p>
+        <div class="card" style="width: 20rem">
+          <img src="./assets/echoDot5.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Echo Dot 5ª geração</h5>
+            <p class="card-text"><strike>R$ 949,00</strike></p>
+            <p class="card-price">R$ 769,00</p>
 
-          <span class="qntLabel">Quantidade: </span>
-          <input type="number" class="form-control form-control-sm" id="quantity" min="1" max="10" value="1" />
+            <!-- <span class="qntLabel">Quantidade: </span> -->
+            <!-- <input type="number" class="form-control form-control-sm quantity" min="1" max="10" value="1" /> -->
 
-          <a type="button" class="btn btn-primary buyButton">Comprar</a>
+            <button type="button" class="btn btn-primary buyButton">Comprar</button>
+          </div>
         </div>
-      </div>
 
-      <div class="card" id="card" style="width: 20rem">
-        <img src="./assets/rtx4090.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Placa de vídeo GeForce RTX 4090 MSI 24Gb</h5>
-          <p class="card-text"><strike>R$ 949.00</strike></p>
-          <p class="card-price">R$ 12.869,00</p>
+        <div class="card" style="width: 20rem">
+          <img src="./assets/rtx4090.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Placa de vídeo GeForce RTX 4090 MSI 24Gb</h5>
+            <p class="card-text"><strike>R$ 949.00</strike></p>
+            <p class="card-price">R$ 12.869,00</p>
 
-          <span class="qntLabel">Quantidade: </span>
-          <input type="number" class="form-control form-control-sm" id="quantity" min="1" max="10" value="1" />
+            <!-- <span class="qntLabel">Quantidade: </span> -->
+            <!-- <input type="number" class="form-control form-control-sm quantity" min="1" max="10" value="1" /> -->
 
-          <a type="button" class="btn btn-primary buyButton">Comprar</a>
+            <button type="button" class="btn btn-primary buyButton">Comprar</button>
+          </div>
         </div>
-      </div>
 
-      <div class="card" id="card" style="width: 20rem">
-        <img src="./assets/msiMotherboard.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Placa mãe MSI MPG AMD B550 Gaming Plus Socket AM4 ATX DDR4-SDRAM</h5>
-          <p class="card-text"><strike>R$ 949.00</strike></p>
-          <p class="card-price">R$ 12.869,00</p>
+        <div class="card" style="width: 20rem">
+          <img src="./assets/msiMotherboard.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Placa mãe MSI MPG AMD B550 Gaming Plus Socket AM4 ATX DDR4-SDRAM</h5>
+            <p class="card-text"><strike>R$ 949.00</strike></p>
+            <p class="card-price">R$ 12.869,00</p>
 
-          <span class="qntLabel">quantity: </span>
-          <input type="number" class="form-control form-control-sm" id="quantity" min="1" max="10" value="1" />
+            <!-- <span class="qntLabel">quantity: </span> -->
+            <!-- <input type="number" class="form-control form-control-sm quantity" min="1" max="10" value="1" /> -->
 
-          <a type="button" class="btn btn-primary buyButton">Comprar</a>
+            <button type="button" class="btn btn-primary buyButton">Comprar</button>
+          </div>
         </div>
-      </div>
 
-      <div class="card" id="card" style="width: 20rem">
-        <img src="./assets/fechaduraElsys.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Fechadura Digital Elsys ESF-DE4000B Preta</h5>
-          <p class="card-text"><strike>R$ 1.150,00</strike></p>
-          <p class="card-price">R$ 969,00</p>
+        <div class="card" style="width: 20rem">
+          <img src="./assets/fechaduraElsys.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Fechadura Digital Elsys ESF-DE4000B Preta</h5>
+            <p class="card-text"><strike>R$ 1.150,00</strike></p>
+            <p class="card-price">R$ 969,00</p>
 
-          <span class="qntLabel">Quantity: </span>
-          <input type="number" class="form-control form-control-sm" id="quantity" min="1" max="10" value="1" />
+            <!-- <span class="qntLabel">Quantity: </span> -->
+            <!-- <input type="number" class="form-control form-control-sm quantity" min="1" max="10" value="1" /> -->
 
-          <a type="button" class="btn btn-primary buyButton">Comprar</a>
+            <button type="button" class="btn btn-primary buyButton">Comprar</button>
+          </div>
         </div>
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container-fluid copyright">
+    <footer class="footer text-center">
+      <div class="container-fluid">
         <p class="h3">Projeto e-Commerce</p>
         <p>Copyright &copy; <a href="https://instagram.com/hiago.dev" target="_blank">Hiago Souza - 2023</a></p>
-        <small><a href="https://hiagosouza.com" target="_blank">Website</a></small>
+        <a href="https://hiagosouza.com" target="_blank">Website</a>
       </div>
     </footer>
   </body>
