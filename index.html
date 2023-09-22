@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" /> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="./js/main.js" defer></script>
     <title>Hiago e-Commerce</title>
@@ -13,7 +12,7 @@
   <body>
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <img src="./assets/logo.svg" alt="logo" width="150" />
+        <a href="./index.html"><img src="./assets/logo.svg" alt="logo" width="150" /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -78,22 +77,24 @@
 
             <div class="d-flex align-items-center searchBar">
               <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchBar" />
-              <label for="searchBar">
-                <img src="./assets/magnifying-glass.png" alt="Search icon" width="20" class="ms-2 searchIcon" />
-              </label>
+              <button class="btn btn-primary search-button">
+                <img src="./assets/magnifying-glass.png" alt="Search button" width="20" />
+              </button>
             </div>
 
             <div class="px-4">
               <li class="login-options"><a class="login-link" href="#">Entre ou Cadastre-se</a></li>
             </div>
-            <div class="cart">
-              <button type="button" class="cart-button p-1">
-                <img src="./assets/shoppingCart.png" alt="Cart" width="35" /><span
-                  class="position-absolute top-10 start-10 translate-middle badge rounded-pill bg-danger"
+
+            <a href="./cart.html">
+              <button class="btn btn-primary shopping-bag" id="shopping-bag">
+                <img src="./assets/shoppingCart.png" alt="Cart" width="25" />
+                <span
+                  class="position-relative top-0 start-100 translate-middle badge rounded-pill bg-danger"
                   id="notification"
                 ></span>
               </button>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -150,70 +151,55 @@
 
       <div class="offerCards">
         <div class="card" style="width: 20rem">
-          <img src="/assets/macbookAirM2.jpeg" class="card-img-top" alt="..." />
+          <img src="/assets/macbookAirM2.jpeg" class="card-img-top card-image" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Apple Macbook Air M2 15" 512Gb 8Gb</h5>
             <p class="card-text"><strike>R$ 23,499,00</strike></p>
             <p class="card-price">R$ 19.899,00</p>
 
-            <!-- <span class="qntLabel">Quantidade: </span> -->
-            <!-- <input type="number" class="form-control form-control-sm quantity" min="1" max="10" value="1" /> -->
-
             <button type="button" class="btn btn-primary buyButton">Comprar</button>
           </div>
         </div>
 
         <div class="card" style="width: 20rem">
-          <img src="./assets/echoDot5.jpg" class="card-img-top" alt="..." />
+          <img src="./assets/echoDot5.jpg" class="card-img-top card-image" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Echo Dot 5ª geração</h5>
             <p class="card-text"><strike>R$ 949,00</strike></p>
             <p class="card-price">R$ 769,00</p>
 
-            <!-- <span class="qntLabel">Quantidade: </span> -->
-            <!-- <input type="number" class="form-control form-control-sm quantity" min="1" max="10" value="1" /> -->
-
             <button type="button" class="btn btn-primary buyButton">Comprar</button>
           </div>
         </div>
 
         <div class="card" style="width: 20rem">
-          <img src="./assets/rtx4090.jpg" class="card-img-top" alt="..." />
+          <img src="./assets/rtx4090.jpg" class="card-img-top card-image" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Placa de vídeo GeForce RTX 4090 MSI 24Gb</h5>
             <p class="card-text"><strike>R$ 949.00</strike></p>
             <p class="card-price">R$ 12.869,00</p>
 
-            <!-- <span class="qntLabel">Quantidade: </span> -->
-            <!-- <input type="number" class="form-control form-control-sm quantity" min="1" max="10" value="1" /> -->
-
             <button type="button" class="btn btn-primary buyButton">Comprar</button>
           </div>
         </div>
 
         <div class="card" style="width: 20rem">
-          <img src="./assets/msiMotherboard.jpg" class="card-img-top" alt="..." />
+          <img src="./assets/msiMotherboard.jpg" class="card-img-top card-image" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Placa mãe MSI MPG AMD B550 Gaming Plus Socket AM4 ATX DDR4-SDRAM</h5>
             <p class="card-text"><strike>R$ 949.00</strike></p>
             <p class="card-price">R$ 12.869,00</p>
 
-            <!-- <span class="qntLabel">quantity: </span> -->
-            <!-- <input type="number" class="form-control form-control-sm quantity" min="1" max="10" value="1" /> -->
-
             <button type="button" class="btn btn-primary buyButton">Comprar</button>
           </div>
         </div>
 
         <div class="card" style="width: 20rem">
-          <img src="./assets/fechaduraElsys.jpg" class="card-img-top" alt="..." />
+          <img src="./assets/fechaduraElsys.jpg" class="card-img-top card-image" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Fechadura Digital Elsys ESF-DE4000B Preta</h5>
             <p class="card-text"><strike>R$ 1.150,00</strike></p>
             <p class="card-price">R$ 969,00</p>
-
-            <!-- <span class="qntLabel">Quantity: </span> -->
-            <!-- <input type="number" class="form-control form-control-sm quantity" min="1" max="10" value="1" /> -->
 
             <button type="button" class="btn btn-primary buyButton">Comprar</button>
           </div>
@@ -222,11 +208,9 @@
     </div>
 
     <footer class="footer text-center">
-      <div class="container-fluid">
-        <p class="h3">Projeto e-Commerce</p>
-        <p>Copyright &copy; <a href="https://instagram.com/hiago.dev" target="_blank">Hiago Souza - 2023</a></p>
-        <a href="https://hiagosouza.com" target="_blank">Website</a>
-      </div>
+      <p class="h3">Projeto e-Commerce</p>
+      <p>Copyright &copy; <a href="https://instagram.com/hiago.dev" target="_blank">Hiago Souza - 2023</a></p>
+      <a href="https://hiagosouza.com" target="_blank">Website</a>
     </footer>
   </body>
 </html>

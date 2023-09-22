@@ -3,13 +3,21 @@ const notification = document.getElementById("notification");
 const addToCartButton = document.querySelectorAll(".buyButton");
 
 const shoppingCart = [];
+let totalCartItens = localStorage.getItem("cart-quantity");
 
-function addToCart(title, price) {
+function addToCart(title, price, image) {
   shoppingCart.push({
     title: title,
     price: price,
+    image: image,
   });
 }
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  // event.preventDefault();
+  console.log({ shoppingCart });
+  notification.innerText = totalCartItens;
+});
 
 addToCartButton.forEach(addToCartButton => {
   addToCartButton.addEventListener("click", event => {
@@ -24,19 +32,19 @@ addToCartButton.forEach(addToCartButton => {
     // seja possível selecionar o título do card e o valor do card, usando card.querySelector
     const card = addToCartButton.closest(".card");
 
-    // Seleciona o título do card
+    const image = card.querySelector(".card-image").getAttribute("src");
     const title = card.querySelector(".card-title").textContent;
+    const price = card.querySelector(".card-price").textContent;
 
-    // Seleciona o preço do card
-    const price = card.getElementsByClassName(".card-price");
-
-    //Atualiza a quantidade e produtos no carrinho
-    const itemAdded = shoppingCart.length + 1;
-    notification.innerText = itemAdded;
-    addToCart(title, price);
+    //Atualiza a quantidade de produtos no carrinho
+    totalCartItens = shoppingCart.length + 1;
+    notification.innerText = totalCartItens;
+    addToCart(title, price, image);
 
     // Console log para entender o que está acontecendo no código
-    console.log({ title, price }, addToCartButton);
-    console.log(shoppingCart);
+    console.log({ title, price, image }, addToCartButton);
+
+    localStorage.setItem("cart-products", JSON.stringify(shoppingCart));
+    localStorage.setItem("cart-quantity", JSON.stringify(totalCartItens));
   });
 });

@@ -1,5 +1,6 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "./variables.scss";
+@import "./cart.scss";
 
 ul,
 li,
@@ -30,14 +31,27 @@ body {
     margin: auto 2em;
   }
 
-  .searchIcon {
+  #searchBar {
+    margin: 0.6em;
+  }
+
+  .search-button {
+    background-color: #404040;
     cursor: pointer;
+  }
+
+  #notification {
+    position: absolute;
+    top: 0;
   }
 }
 
-.cart-button {
+.shopping-bag {
   border: none;
-  background-color: transparent;
+  background-color: #ff952c;
+  border-radius: 8px;
+  width: 50px;
+  height: 40px;
 }
 
 .carouselBanner {
@@ -106,10 +120,9 @@ body {
 }
 
 .footer {
-  height: 2%;
   background-color: $navbar-bg-color;
   color: #404040;
-  padding: 3em;
+  padding: 1em;
   font-size: 1.1em;
   border-top: 1px solid #dddddd;
 }
