@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" defer></script>
-    <!-- <script src="./js/main.js" type="module" defer></script> -->
-    <script src="./js/cart.js" defer></script>
+    <script src="./js/cart.js" type="module" defer></script>
     <title>Shopping Cart</title>
   </head>
   <body>
@@ -64,61 +63,6 @@
           </div>
 
           <hr />
-
-          <div class="cart-item">
-            <img class="productImage" src="./assets/macbookAirM2.jpeg" alt="Produto 1" />
-            <p class="product-title">Apple Macbook Air M2 15" 512Gb 8Gb</p>
-            <input
-              class="form-control product-quantity"
-              type="number"
-              aria-label="quantity"
-              value="1"
-              min="1"
-              max="10"
-            />
-            <p class="card-price">R$ 19.899,00</p>
-            <button class="removeButton btn btn-primary">
-              <img src="./assets/trashIcon.png" alt="Excluir produto" width="20" />
-            </button>
-          </div>
-
-          <hr />
-
-          <div class="cart-item">
-            <img class="productImage" src="./assets/echoDot5.jpg" alt="Produto 1" />
-            <p class="product-title">Apple Macbook Air M2 15" 512Gb 8Gb</p>
-            <input
-              class="form-control product-quantity"
-              type="number"
-              aria-label="quantity"
-              value="1"
-              min="1"
-              max="10"
-            />
-            <p class="card-price">R$ 19.899,00</p>
-            <button class="removeButton btn btn-primary">
-              <img src="./assets/trashIcon.png" alt="Excluir produto" width="20" />
-            </button>
-          </div>
-
-          <hr />
-
-          <div class="cart-item">
-            <img class="productImage" src="./assets/fechaduraElsys.jpg" alt="Produto 1" />
-            <p class="product-title">Apple Macbook Air M2 15" 512Gb 8Gb</p>
-            <input
-              class="form-control product-quantity"
-              type="number"
-              aria-label="quantity"
-              value="1"
-              min="1"
-              max="10"
-            />
-            <p class="card-price">R$ 19.899,00</p>
-            <button class="removeButton btn btn-primary">
-              <img src="./assets/trashIcon.png" alt="Excluir produto" width="20" />
-            </button>
-          </div>
         </div>
       </div>
 
@@ -127,21 +71,21 @@
 
         <div>
           <p class="payment-title">Total de produtos</p>
-          <p>R$ <span id="subtotal">100.000,00</span></p>
+          <p>R$ <span id="subtotal">0,00</span></p>
         </div>
 
         <hr />
 
         <div>
           <p class="payment-title">Frete</p>
-          <p>R$ <span id="delivery">50,00</span></p>
+          <p>R$ <span id="delivery">0,00</span></p>
         </div>
 
         <hr />
 
         <div>
           <p class="payment-title">Total:</p>
-          <p class="payment-subtitle">R$ <span id="payment-price">100.050,00</span></p>
+          <p class="payment-subtitle">R$ <span id="payment-price">0,00</span></p>
         </div>
 
         <div class="button-pay">
