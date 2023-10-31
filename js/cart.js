@@ -1,21 +1,7 @@
 const shoppingCart = JSON.parse(localStorage.getItem("shoppingCartData"));
-const cartQuantity = JSON.parse(localStorage.getItem("shoppingCartQuantity"));
+const cartContainer = document.querySelector(".products");
 
-console.log(shoppingCart);
-
-for (let item of shoppingCart) {
-  let totalValue = item.price * item.quantity;
-  console.log(totalValue);
-}
-
-function cartSubtotal() {
-  const subtotal = document.getElementById("subtotal");
-  subtotal.textContent = totalValue;
-}
-
-if (shoppingCart && cartQuantity) {
-  const cartContainer = document.querySelector(".products");
-
+if (shoppingCart) {
   shoppingCart.forEach(product => {
     const productElement = document.createElement("div");
     productElement.classList.add("cart-item");
@@ -46,7 +32,7 @@ if (shoppingCart && cartQuantity) {
     itemPrice.classList.add("item-price");
 
     const removeProductBtn = document.createElement("button");
-    removeProductBtn.classList.add("removeButton", "btn", "btn-primary");
+    removeProductBtn.classList.add("remove-button", "btn", "btn-primary");
     removeProductBtn.innerHTML = '<img src="./assets/trashIcon.png" alt="Excluir produto" width="20" />';
 
     classPrice.appendChild(itemPrice);
@@ -55,7 +41,6 @@ if (shoppingCart && cartQuantity) {
     cartContainer.appendChild(productElement);
   });
 } else {
-  const cartContainer = document.querySelector(".products");
   const cartInfo = document.querySelector(".cart-info");
   cartInfo.innerHTML = "";
 
@@ -65,9 +50,32 @@ if (shoppingCart && cartQuantity) {
   const emptyCart = document.createElement("p");
   emptyCart.classList.add("h6", "text-center");
   emptyCart.innerText = "Seu carrinho está vazio, que tal escolher algo? 😉";
-
   productElement.appendChild(emptyCart);
   cartContainer.appendChild(productElement);
 }
 
-cartSubtotal();
+// Função atualizar total do carrinho
+function updateCartTotal() {
+  const removeButtons = cartContainer.querySelectorAll(".remove-button");
+  console.log(removeButtons);
+
+  function removeCartItem(index) {
+    const cartItems = document.querySelectorAll(".cart-item");
+
+    if (index >= 0) {
+      const cartItem = cartItems[index];
+      cartItem.parentNode.removeChild(cartItem);
+
+      shoppingCart.splice(index, 1);
+      localStorage.setItem("shoppingCartData", JSON.stringify(shoppingCart));
+    }
+  }
+  removeButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      removeCartItem(index);
+      console.log(shoppingCart);
+    });
+  });
+}
+updateCartTotal();
+console.log(shoppingCart);

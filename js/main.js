@@ -2,8 +2,9 @@ const addedToCart = document.querySelector(".toast");
 const notification = document.getElementById("notification");
 const addToCartButton = document.querySelectorAll(".buyButton");
 
-export const shoppingCart = [];
-let totalCartItens = localStorage.getItem("shoppingCartQuantity");
+const shoppingCart = [];
+// let totalCartItens = localStorage.getItem("shoppingCartQuantity");
+let totalCartItens = shoppingCart.length;
 
 function addToCart(title, price, image) {
   shoppingCart.push({
@@ -41,12 +42,8 @@ addToCartButton.forEach(addToCartButton => {
     addToCart(title, price, image);
 
     localStorage.setItem("shoppingCartData", JSON.stringify(shoppingCart));
-    localStorage.setItem("shoppingCartQuantity", JSON.stringify(totalCartItens));
 
     // Console log para entender o que está acontecendo no código
     console.log({ title, price, image }, addToCartButton);
   });
 });
-
-console.log(shoppingCart);
-console.log(totalCartItens);
